@@ -28,7 +28,7 @@ setup(
     long_description=description,
     author="Tanmay Desai",
     author_email="desai.j.tanmay@gmail.com",
-    url="[https://github.com/TanmayJDesai/Adapter-Project-DBT](https://github.com/TanmayJDesai/Proj1)",
+    url="https://github.com/TanmayJDesai/Proj1",
     packages=find_namespace_packages(include=["dbt", "dbt.*"]),
     include_package_data=True,
     install_requires=[
