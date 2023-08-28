@@ -50,7 +50,7 @@ class SurrealColumn(dbtClassMixin, Column):
         elif self.type == "datetime":
             return f"TIMESTAMP '{value:%Y-%m-%d %H:%M:%S}'"
         elif self.type in {"object", "array", "geometry", "future"}:
-            return str(value)  # Assuming value is already a JSON/JSONB string or dictionary
+            return str(value) 
         return super().literal(value)
 
     def to_column_dict(self, omit_none: bool = True, validate: bool = False) -> JsonDict:
