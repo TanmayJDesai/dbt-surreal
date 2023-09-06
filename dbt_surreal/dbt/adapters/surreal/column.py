@@ -3,6 +3,8 @@ from dbt.dataclass_schema import dbtClassMixin
 from hologram import JsonDict
 from typing import Any, Optional, TypeVar, Union
 
+#comment check
+
 Self = TypeVar("Self", bound="SurrealColumn")
 
 
