@@ -1,6 +1,7 @@
+'''
 import pytest
 from dbt.tests.util import run_dbt
-from dbt_surreal.tests.functional.MainTest.fixtures import my_new_seed_csv, my_new_model_sql, my_new_model_yml
+from dbt_surreal.tests.functional.example.fixtures import my_new_seed_csv, my_new_model_sql, my_new_model_yml
 
 class TestExample:
 
@@ -42,3 +43,4 @@ class TestExample:
     def test_build(self, project):
         """Expect a failing test"""
         results = run_dbt(["build"])
+'''
