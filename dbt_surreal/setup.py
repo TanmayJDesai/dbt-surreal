@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import find_namespace_packages, setup
 
-package_name = "dbt_surreal"
+package_name = "dbt-surreal"
 # make sure this always matches dbt/adapters/{adapter}/__version__.py
 package_version = "1.7.4"
 description = """The Surreal adapter plugin for dbt"""

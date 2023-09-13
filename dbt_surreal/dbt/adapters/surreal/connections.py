@@ -6,6 +6,7 @@ from typing import Optional
 import dbt.exceptions
 from dbt.adapters.base import Credentials
 from dbt.adapters.sql import SQLConnectionManager as connection_cls
+from dbt.contracts.connection import AdapterResponse
 from dbt.logger import GLOBAL_LOGGER as logger
 
 # Import the surrealdb library for connection functionality
@@ -57,14 +58,14 @@ class SurrealConnectionManager(connection_cls):
         try:
             yield
         except surrealdb.DatabaseError as exc:
-            self.release(connection_name)
+            self.release(self.connection)
 
             logger.debug("Surreal adapter error: {}".format(str(exc)))
             raise dbt.exceptions.DatabaseException(str(exc))
         except Exception as exc:
             logger.debug("Error running SQL: {}".format(sql))
             logger.debug("Rolling back transaction.")
-            self.release(connection_name)
+            self.release(self.connection)
             raise dbt.exceptions.RuntimeException(str(exc))
 
     @classmethod

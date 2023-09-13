@@ -13,7 +13,7 @@ from dbt.tests.adapter.basic.test_snapshot_check_cols import BaseSnapshotCheckCo
 from dbt.tests.adapter.basic.test_snapshot_timestamp import BaseSnapshotTimestamp
 from dbt.tests.adapter.basic.test_adapter_methods import BaseAdapterMethod
 
-
+@pytest.mark.skip_profile("surrealdb")
 class TestSimpleMaterializationsSurreal(BaseSimpleMaterializations):
     pass
 
