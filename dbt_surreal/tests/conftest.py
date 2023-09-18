@@ -3,7 +3,7 @@ import pytest
 import os
 # import json
 
-# Import the fuctional fixtures as a plugin
+# Import the functional fixtures as a plugin
 # Note: fixtures with session scope need to be local
 
 pytest_plugins = ["dbt.tests.fixtures.project"]
@@ -15,7 +15,15 @@ def dbt_profile_target():
     return {
         'type': '<myadapter>',
         'threads': 1,
-        'host': os.getenv('HOST_ENV_VAR_NAME'),
-        'user': os.getenv('USER_ENV_VAR_NAME'),
+        'host': 'http://localhost:8000/',
+        'user': 'root',
+        'pass': 'root',
+        'database' : 'bankchurn',
+        'namespace': 'dbt_tdesai',
+
+
+
+
 
     }
+

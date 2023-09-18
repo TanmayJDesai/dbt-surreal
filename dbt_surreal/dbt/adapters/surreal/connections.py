@@ -29,7 +29,7 @@ class SurrealCredentials(Credentials):
     @property
     def type(self):
         """Return name of adapter."""
-        return "surreal"
+        return "dbt-surreal"
 
     @property
     def unique_field(self):
