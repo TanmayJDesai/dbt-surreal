@@ -8,7 +8,6 @@ import os
 
 pytest_plugins = ["dbt.tests.fixtures.project"]
 
-
 # The profile dictionary, used to write out profiles.yml
 @pytest.fixture(scope="class")
 def dbt_profile_target():
