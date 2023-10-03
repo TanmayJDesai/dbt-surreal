@@ -116,8 +116,7 @@ class SurrealConnectionManager(connection_cls):
     def cancel(self, connection):
         """
         Gets a connection object and attempts to cancel any ongoing queries.
+
+        Note: SurrealDB may not support query cancellation, so we raise a "Not Supported" exception.
         """
-        #Just leaving this as pass as I did not find any relevant information in the SurrealDB Documentation so
-        #i think they dont support cancelation.
-        # Implement this method based on your adapter's behavior
-        pass
+        raise dbt.exceptions.NotSupportedException("Query cancellation is not supported by SurrealDB")
