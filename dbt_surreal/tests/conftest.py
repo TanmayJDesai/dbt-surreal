@@ -7,11 +7,12 @@ pytest_plugins = ["dbt.tests.fixtures.project"]
 def dbt_profile_target():
     return {
         'type': '<myadapter>',
-        'threads': 1,
-        'host': 'http://localhost:8000/',
+        'host': 'surrealist.app',
+        'port': 'http://localhost:8000/',
         'user': 'root',
         'pass': 'root',
         'database': 'bankchurn',
         'namespace': 'dbt_tdesai',
+        'threads': 1
     }
 
